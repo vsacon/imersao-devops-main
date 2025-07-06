@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  api_alura:
+    build: .
+    container_name: api_alura
+    ports:
+      - "8000:8000" # map host port 8000 to container port 8000 of the container 
+                    # (as defined in Dockerfile with EXPOSE 8000 and CMD ["python", "app.py"])
+    volumes:
+      # Mount the current directory into the container for live-reloading
+      - .:/app
